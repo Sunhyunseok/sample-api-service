@@ -23,7 +23,7 @@ import javax.sql.DataSource;
 @EnableTransactionManagement
 public class DatabaseConfiguration {
 
-    @Value("${mybatis.mapper-locations}")
+    @Value("${mybatis.mapper-locations}")  
     private String resourcePath;
 
     @Bean

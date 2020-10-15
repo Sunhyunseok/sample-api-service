@@ -11,6 +11,6 @@ public class FileInfo  {
 
 	public FileInfo(String url, String name) {
 		this.url = url;
-		this.name = name;
+		this.name = name; 
 	}
 }
