@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: sample-api-service
+data:
+  PORT: "8080"
+  SPRING_PROFILES_ACTIVE: "dev"
