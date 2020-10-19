@@ -2,9 +2,9 @@ package com.sk.jdp.common.sample.iam.service;
 
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Service;
 
 import com.amazonaws.auth.AWSCredentials;
@@ -24,6 +24,7 @@ import com.amazonaws.services.identitymanagement.model.CreateUserResult;
 import com.amazonaws.services.identitymanagement.model.ListUsersRequest;
 import com.amazonaws.services.identitymanagement.model.ListUsersResult;
 import com.amazonaws.services.identitymanagement.model.User;
+import com.sk.jdp.common.sample.iam.model.IamUser;
 
 import software.amazon.awssdk.services.iam.model.IamException;
 
@@ -49,19 +50,23 @@ public class IamService {
     }
     
     //get IAMuser List
-    public ArrayList<String> getIAMUser(){
+    public List<IamUser> getIamUser(){
     	
-    	ArrayList<String> userList = new ArrayList<String>();
     	AmazonIdentityManagement iam = buildIamClient();
+    	ListUsersRequest request = new ListUsersRequest();
+    	List<IamUser> userList =  new ArrayList<>();
+    	
     	boolean done = false;
-	    ListUsersRequest request = new ListUsersRequest();
-
+	   
 	    while(!done) {
 	        ListUsersResult response = iam.listUsers(request);
 
 	        for(User user : response.getUsers()) {
-	        	userList.add(user.getUserName().toString());
-	            System.out.format("Retrieved user %s", user.getUserName());
+	        	IamUser iamUser = new IamUser();
+	        	iamUser.setIamUserName(user.getUserName());
+	        	iamUser.setCreateDate(user.getCreateDate());
+	        	userList.add(iamUser);
+	        	System.out.format("Retrieved user %s", user.getUserName());
 	        }
 
 	        request.setMarker(response.getMarker());
@@ -70,14 +75,14 @@ public class IamService {
 	            done = true;
 	        }
 	    }
+	    
 	    return userList;
     }
-    
    
         
         
 	//IAM user create
-	public String createIAMUser(String userName) {
+	public String createIamUser(String userName) {
 
 		
 		AmazonIdentityManagement iam = buildIamClient();
@@ -98,7 +103,7 @@ public class IamService {
 	 	return "";
     }
 	//User IAM AccessKey create
-	public String createIAMAccessKey(String userName) {
+	public String createIamAccessKey(String userName) {
 		  
 		//AWSCredentials credentials = new BasicAWSCredentials(this.accessKey, this.secretKey);
 		//AmazonIdentityManagement iam = AmazonIdentityManagementClientBuilder.standard()
@@ -163,7 +168,7 @@ public class IamService {
 			
            
 	
-	public String createIAMPolicy(String userName) {
+	public String createIamPolicy(String userName) {
 		//AWSCredentials credentials = new BasicAWSCredentials(this.accessKey, this.secretKey);
 	 	//AmazonIdentityManagement iam = AmazonIdentityManagementClientBuilder.standard()
 		// 			.withCredentials(new AWSStaticCredentialsProvider(credentials))

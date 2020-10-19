@@ -1,12 +1,19 @@
 package com.sk.jdp.common.sample.iam.model;
 
 
+
+
+import java.util.Date;
+
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter @Setter
 public class IamUser {
 
-	private String userName;
+	private String iamUserName;
+	private Date createDate;
+	
+	
 	
 }

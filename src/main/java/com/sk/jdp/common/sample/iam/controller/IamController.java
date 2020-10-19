@@ -1,7 +1,7 @@
 package com.sk.jdp.common.sample.iam.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,25 +26,27 @@ public class IamController {
 	}
 	
 	@GetMapping("/iam/user")
-	public ArrayList<String> getIAMUser() throws IOException {
-		return this.iamService.getIAMUser();
+	public List<IamUser> getIAMUser() throws IOException {
+		return this.iamService.getIamUser();
 	}
+	
+
 	//user 생성
 	@PostMapping("/iam/user")
 	public String createIAMUser(@RequestBody IamUser user) throws IOException {
-		return this.iamService.createIAMUser(user.getUserName());
+		return this.iamService.createIamUser(user.getIamUserName());
 	}
 	
 	//access key 생성 및 할당 
 	@PostMapping("/iam/access-key")
 	public String createAccessKey(@RequestBody IamUser user) throws IOException {
-		return this.iamService.createIAMAccessKey(user.getUserName());
+		return this.iamService.createIamAccessKey(user.getIamUserName());
 	}
 	
 	 //policy 생성 (독립 s3버킷  full access)
 	@PostMapping("/iam/policy") 
 	 public String createIAMPolicy(@RequestBody IamUser user) throws IOException { 
-		 return this.iamService.createIAMPolicy(user.getUserName());
+		 return this.iamService.createIamPolicy(user.getIamUserName());
 	 }
 	 
 }
