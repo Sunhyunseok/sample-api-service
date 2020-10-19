@@ -1,0 +1,19 @@
+spring:  
+  application:
+    name: sample-api-service
+  datasource:  
+    schema: classpath*:schema.sql
+    data: classpath*:data.sql
+    hikari:  
+      driverClassName: org.mariadb.jdbc.Driver
+      jdbc-url: jdbc:mariadb://localhost:3306/prod
+      username: root
+      password: skcc
+    initialization-mode: always
+      
+logging:
+  file:
+    max-history: 1
+    max-size: 1MB
+    name: logs/${spring.application.name}.log
+

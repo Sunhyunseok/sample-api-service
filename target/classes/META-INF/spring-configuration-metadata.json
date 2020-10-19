@@ -1,0 +1,12 @@
+{
+  "groups": [
+    {
+      "name": "spring.datasource.hikari",
+      "type": "javax.sql.DataSource",
+      "sourceType": "com.sk.jdp.common.sample.configuration.DatabaseConfiguration",
+      "sourceMethod": "public javax.sql.DataSource dataSource() "
+    }
+  ],
+  "properties": [],
+  "hints": []
+}

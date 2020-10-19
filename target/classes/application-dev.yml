@@ -1,0 +1,28 @@
+spring:  
+  application:
+    name: sample-api-service
+  datasource:  
+    schema: classpath*:schema.sql
+    data: classpath*:data.sql
+    hikari:  
+      driverClassName: org.mariadb.jdbc.Driver
+      jdbc-url: jdbc:mariadb://localhost:3306/dev
+      username: root
+      password: skcc
+    initialization-mode: always
+  messages: 
+    basename: classpath:messages/message
+    encoding: UTF-8
+      
+logging:
+  file:
+    max-history: 1
+    max-size: 1MB
+    name: logs/${spring.application.name}.log
+
+
+server:
+  port: ${PORT:8080}
+
+mybatis:
+  mapper-locations: classpath:mappers/**/*.xml
