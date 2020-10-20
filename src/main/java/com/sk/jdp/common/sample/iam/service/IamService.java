@@ -4,12 +4,9 @@ package com.sk.jdp.common.sample.iam.service;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import com.amazonaws.auth.AWSCredentials;
-import com.amazonaws.auth.AWSStaticCredentialsProvider;
-import com.amazonaws.auth.BasicAWSCredentials;
+import com.amazonaws.auth.profile.ProfileCredentialsProvider;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.identitymanagement.AmazonIdentityManagement;
 import com.amazonaws.services.identitymanagement.AmazonIdentityManagementClientBuilder;
@@ -32,19 +29,20 @@ import software.amazon.awssdk.services.iam.model.IamException;
 @Service
 public class IamService {
 	
-	@Value("${cloud.aws.credentials.accessKey}")
-    private String accessKey;
-	
-    @Value("${cloud.aws.credentials.secretKey}")
-    private String secretKey;
+//	@Value("${cloud.aws.credentials.accessKey}")
+//    private String accessKey;
+//	
+//    @Value("${cloud.aws.credentials.secretKey}")
+//    private String secretKey;
   
     
     public AmazonIdentityManagement buildIamClient() {
     	
-    	AWSCredentials credentials = new BasicAWSCredentials(this.accessKey, this.secretKey);
+//    	AWSCredentials credentials = new BasicAWSCredentials(this.accessKey, this.secretKey);
     	AmazonIdentityManagement iam = AmazonIdentityManagementClientBuilder.standard()
-	 			.withCredentials(new AWSStaticCredentialsProvider(credentials))
+//	 			.withCredentials(new AWSStaticCredentialsProvider(credentials))
 	            .withRegion(Regions.AP_NORTHEAST_2)
+	            .withCredentials(new ProfileCredentialsProvider("jdpprofile"))
 	            .build();
     	return iam;
     }
@@ -82,7 +80,7 @@ public class IamService {
         
         
 	//IAM user create
-	public String createIamUser(String userName) {
+	public String createIamUser(String iamUserName) {
 
 		
 		AmazonIdentityManagement iam = buildIamClient();
@@ -90,7 +88,7 @@ public class IamService {
 	 	try {
            
 	 		//CreateUserRequest request = CreateUserRequest.builder().userName(username).build();
-	 		CreateUserRequest request = new CreateUserRequest().withUserName(userName);
+	 		CreateUserRequest request = new CreateUserRequest().withUserName(iamUserName);
             //CreateUserResponse response = iam.createUser(request);
 	 		CreateUserResult response = iam.createUser(request);
 
@@ -103,7 +101,7 @@ public class IamService {
 	 	return "";
     }
 	//User IAM AccessKey create
-	public String createIamAccessKey(String userName) {
+	public String createIamAccessKey(String iamUserName) {
 		  
 		 
 		AmazonIdentityManagement iam = buildIamClient();
@@ -111,7 +109,7 @@ public class IamService {
 	 	try {
 	        	
             
-            CreateAccessKeyRequest request = new CreateAccessKeyRequest().withUserName(userName);
+            CreateAccessKeyRequest request = new CreateAccessKeyRequest().withUserName(iamUserName);
 
             CreateAccessKeyResult response = iam.createAccessKey(request);
             
@@ -127,7 +125,7 @@ public class IamService {
 	        return "";
 	    }
 		
-	public String PolicyDocument(String userName) {
+	public String PolicyDocument(String iamUserName) {
 		String policydocument =
 				"{" +
                 "  \"Version\": \"2012-10-17\",	" +
@@ -144,8 +142,8 @@ public class IamService {
                 "       \"Effect\": \"Allow\",	" +
                 "       \"Action\": \"s3:*\"," +
                 "		\"Resource\": ["+
-                "			\"arn:aws:s3:::jdpbucket"+userName+"\", "+
-                "			\"arn:aws:s3:::jdpbucket"+userName+"/*\""+
+                "			\"arn:aws:s3:::jdpbucket"+iamUserName+"\", "+
+                "			\"arn:aws:s3:::jdpbucket"+iamUserName+"/*\""+
 				"		 ]"+
                 "    }" +
                 "   ]" +
@@ -157,7 +155,7 @@ public class IamService {
 			
            
 	
-	public String createIamPolicy(String userName) {
+	public String createIamPolicy(String iamUserName) {
 		//AWSCredentials credentials = new BasicAWSCredentials(this.accessKey, this.secretKey);
 	 	//AmazonIdentityManagement iam = AmazonIdentityManagementClientBuilder.standard()
 		// 			.withCredentials(new AWSStaticCredentialsProvider(credentials))
@@ -169,8 +167,8 @@ public class IamService {
 
 		AmazonIdentityManagement iam = buildIamClient();
 		
-		String policyName= "JDPpolicy"+userName;
-		String policydocument = PolicyDocument(userName);
+		String policyName= "JDPpolicy"+iamUserName;
+		String policydocument = PolicyDocument(iamUserName);
         try {
               //CreatePolicyRequest request = CreatePolicyRequest.builder()
               //  .policyName(policyName)
@@ -185,9 +183,9 @@ public class IamService {
         	
         	String policyArn = "arn:aws:iam::739913306696:policy/"+policyName;
               
-			AmazonIdentityManagement client = AmazonIdentityManagementClientBuilder.standard().build();
-			AttachUserPolicyRequest policyrequest = new AttachUserPolicyRequest().withUserName(userName).withPolicyArn(policyArn);
-			AttachUserPolicyResult policyresponse = client.attachUserPolicy(policyrequest);
+//			AmazonIdentityManagement client = AmazonIdentityManagementClientBuilder.standard().build();
+			AttachUserPolicyRequest policyrequest = new AttachUserPolicyRequest().withUserName(iamUserName).withPolicyArn(policyArn);
+			AttachUserPolicyResult policyresponse = iam.attachUserPolicy(policyrequest);
 			  
 			return response.getPolicy().getArn();
 			

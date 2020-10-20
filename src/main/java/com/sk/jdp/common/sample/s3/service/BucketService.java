@@ -3,13 +3,11 @@ package com.sk.jdp.common.sample.s3.service;
 import java.io.File;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Service;
 
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSStaticCredentialsProvider;
-import com.amazonaws.auth.BasicAWSCredentials;
+import com.amazonaws.auth.profile.ProfileCredentialsProvider;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3ClientBuilder;
@@ -20,18 +18,20 @@ import com.amazonaws.services.s3.model.PutObjectRequest;
 @Service
 public class BucketService {
 
-	@Value("${cloud.aws.credentials.accessKey}")
-    private String accessKey;
-	
-    @Value("${cloud.aws.credentials.secretKey}")
-    private String secretKey;
+//	@Value("${cloud.aws.credentials.accessKey}")
+//    private String accessKey;
+//	
+//    @Value("${cloud.aws.credentials.secretKey}")
+//    private String secretKey;
 
     
     public AmazonS3 buildS3Client() {
-    	AWSCredentials credentials = new BasicAWSCredentials(this.accessKey, this.secretKey);
+//    	AWSCredentials credentials = new ProfileCredentialsProvider();
         AmazonS3 s3 = AmazonS3ClientBuilder.standard()
-        		.withCredentials(new AWSStaticCredentialsProvider(credentials))
-        		.withRegion(Regions.AP_NORTHEAST_2).build();
+//        		.withCredentials(new AWSStaticCredentialsProvider(credentials))
+        		.withRegion(Regions.AP_NORTHEAST_2)
+        		.withCredentials(new ProfileCredentialsProvider("jdpprofile"))
+        		.build();
         return s3;
     }
     
@@ -55,11 +55,11 @@ public class BucketService {
         return named_bucket;
     }
 	
-	public Bucket createBucket(String userName) {
+	public Bucket createBucket(String iamUserName) {
 		
 		AmazonS3 s3 = buildS3Client();
 		
-		String bucketName = "jdpbucket"+userName;
+		String bucketName = "jdpbucket"+iamUserName;
         
         Bucket b = null;
         if (s3.doesBucketExistV2(bucketName)) {
@@ -77,7 +77,7 @@ public class BucketService {
 	
 
 
-    public String uploadFile(String userName, File file) {
+    public String uploadFile(String iamUserName, File file) {
     	
     	//AWSCredentials credentials = new BasicAWSCredentials(this.accessKey, this.secretKey);
         //AmazonS3 s3 = AmazonS3ClientBuilder.standard()
@@ -85,7 +85,7 @@ public class BucketService {
         //		.withRegion(Regions.AP_NORTHEAST_2).build();
     	AmazonS3 s3 = buildS3Client();
         
-    	String bucketName = "jdpbucket"+userName;
+    	String bucketName = "jdpbucket"+iamUserName;
     	
     	PutObjectRequest request = new PutObjectRequest(bucketName,file.getName(),file);
     	

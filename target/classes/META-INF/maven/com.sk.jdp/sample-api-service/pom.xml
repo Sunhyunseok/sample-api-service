@@ -21,7 +21,7 @@
 	</properties>
 	
 
-    <repositories>
+    <!-- <repositories>
         <repository>
             <id>maven-public</id>
             <name>jdp maven repository for public dependency</name>
@@ -48,7 +48,7 @@
             </releases>
         </pluginRepository>
     </pluginRepositories>
-
+ -->
     
 	<dependencies>
 	

@@ -9,7 +9,7 @@ import lombok.Setter;
 @Getter @Setter
 public class BucketUser {
 
-	private String userName;
+	private String iamUserName;
 	private File file;
 	
 

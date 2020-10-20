@@ -25,7 +25,7 @@ public class IamController {
 		this.iamService= iamService;
 	}
 	
-	@GetMapping("/iam/user")
+	@GetMapping("/iam/users")
 	public List<IamUser> getIamUser() throws IOException {
 		return this.iamService.getIamUserList();
 	}
@@ -33,20 +33,20 @@ public class IamController {
 
 	//user 생성
 	@PostMapping("/iam/user")
-	public String createIamUser(@RequestBody IamUser user) throws IOException {
-		return this.iamService.createIamUser(user.getIamUserName());
+	public String createIamUser(@RequestBody IamUser iamUserName) throws IOException {
+		return this.iamService.createIamUser(iamUserName.getIamUserName());
 	}
 	
 	//access key 생성 및 할당 
 	@PostMapping("/iam/access-key")
-	public String createAccessKey(@RequestBody IamUser user) throws IOException {
-		return this.iamService.createIamAccessKey(user.getIamUserName());
+	public String createAccessKey(@RequestBody IamUser iamUserName) throws IOException {
+		return this.iamService.createIamAccessKey(iamUserName.getIamUserName());
 	}
 	
 	 //policy 생성 (독립 s3버킷  full access)
 	@PostMapping("/iam/policy") 
-	 public String createIamPolicy(@RequestBody IamUser user) throws IOException { 
-		 return this.iamService.createIamPolicy(user.getIamUserName());
+	 public String createIamPolicy(@RequestBody IamUser iamUserName) throws IOException { 
+		 return this.iamService.createIamPolicy(iamUserName.getIamUserName());
 	 }
 	 
 }

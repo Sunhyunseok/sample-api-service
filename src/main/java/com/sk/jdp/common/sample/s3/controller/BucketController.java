@@ -25,26 +25,26 @@ public class BucketController {
 		this.bucketService= bucketService;
 	}
 	
-	@GetMapping("/bucket")
+	@GetMapping("/buckets")
 	public List<Bucket> getBucketList() throws IOException {
 		return this.bucketService.getBucketList();
 	}
 	
 	@PostMapping("/bucket")
-	public Bucket createBucket(@RequestBody BucketUser user) throws IOException {
-		return this.bucketService.createBucket(user.getUserName());
+	public Bucket createBucket(@RequestBody BucketUser iamUserName) throws IOException {
+		return this.bucketService.createBucket(iamUserName.getIamUserName());
 	}
 	
 	//버킷 삭제
 	//@DeleteMapping("/bucket")
-	//public Bucket deleteBucket(@RequestBody BucketUser user) throws IOException {
-	//	return this.bucketService.deleteBucket(user.getUserName());
+	//public Bucket deleteBucket(@RequestBody BucketUser iamUserName) throws IOException {
+	//	return this.bucketService.deleteBucket(iamUserName.getIamUserName());
 	//}
 	
 	
 	@PostMapping("/bucket/file")
-	public String uploadFile(@RequestBody BucketUser user) throws IOException{
-		return this.bucketService.uploadFile(user.getUserName(),user.getFile());
+	public String uploadFile(@RequestBody BucketUser iamUserName) throws IOException{
+		return this.bucketService.uploadFile(iamUserName.getIamUserName(),iamUserName.getFile());
 	}
 	
 }
