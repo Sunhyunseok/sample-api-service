@@ -1,6 +1,4 @@
 spring:  
-  application:
-    name: sample-api-service
   datasource:  
     schema: classpath*:schema.sql
     data: classpath*:data.sql
@@ -14,15 +12,15 @@ spring:
     basename: classpath:messages/message
     encoding: UTF-8
       
-logging:
-  file:
-    max-history: 1
-    max-size: 1MB
+logging:   
+  file:  
+    max-history: 7
+    max-size: 10MB
     name: logs/${spring.application.name}.log
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 
 
-server:
-  port: ${PORT:8080}
-
-mybatis:
-  mapper-locations: classpath:mappers/**/*.xml

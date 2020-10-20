@@ -1,6 +1,4 @@
 spring:  
-  application:
-    name: sample-api-service
   datasource:  
     schema: classpath*:schema.sql
     data: classpath*:data.sql
@@ -10,26 +8,24 @@ spring:
       username: root
       password: skcc
     initialization-mode: always
-  messages: 
-    basename: classpath:messages/message
-    encoding: UTF-8
   servlet: 
     multipart:
       enabled: TRUE
       max-file-size: 50MB
       max-request-size: 50MB
       
-server:
-  port: ${PORT:8080}
 
-mybatis:
-  mapper-locations: classpath:mappers/**/*.xml
-
-logging:
-  file:
-    max-history: 1
-    max-size: 1MB
+logging: 
+  file:  
+    max-size:  10MB
+    max-history:  7
     name: logs/${spring.application.name}.log
-
-
+   
+    
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  
 
