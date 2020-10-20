@@ -27,7 +27,7 @@ public class IamController {
 	
 	@GetMapping("/iam/user")
 	public List<IamUser> getIamUser() throws IOException {
-		return this.iamService.getIamUser();
+		return this.iamService.getIamUserList();
 	}
 	
 

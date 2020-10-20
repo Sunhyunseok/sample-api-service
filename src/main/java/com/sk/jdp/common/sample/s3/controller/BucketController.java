@@ -42,7 +42,6 @@ public class BucketController {
 	//}
 	
 	
-	
 	@PostMapping("/bucket/file")
 	public String uploadFile(@RequestBody BucketUser user) throws IOException{
 		return this.bucketService.uploadFile(user.getUserName(),user.getFile());

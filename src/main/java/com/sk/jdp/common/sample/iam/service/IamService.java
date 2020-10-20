@@ -50,7 +50,7 @@ public class IamService {
     }
     
     //get IAMuser List
-    public List<IamUser> getIamUser(){
+    public List<IamUser> getIamUserList(){
     	
     	AmazonIdentityManagement iam = buildIamClient();
     	ListUsersRequest request = new ListUsersRequest();
@@ -105,22 +105,11 @@ public class IamService {
 	//User IAM AccessKey create
 	public String createIamAccessKey(String userName) {
 		  
-		//AWSCredentials credentials = new BasicAWSCredentials(this.accessKey, this.secretKey);
-		//AmazonIdentityManagement iam = AmazonIdentityManagementClientBuilder.standard()
-		// 			.withCredentials(new AWSStaticCredentialsProvider(credentials))
-		//            .withRegion(Regions.AP_NORTHEAST_2)
-		//            .build();
-		//String username = userName;
-		//Region region = Region.AWS_GLOBAL;
-		//IamClient iam = IamClient.builder().region(region).build();
 		 
 		AmazonIdentityManagement iam = buildIamClient();
 		
 	 	try {
 	        	
-            //CreateAccessKeyRequest request = CreateAccessKeyRequest.builder().userName(username).build();
-
-            //CreateAccessKeyResponse response = iam.createAccessKey(request);
             
             CreateAccessKeyRequest request = new CreateAccessKeyRequest().withUserName(userName);
 
