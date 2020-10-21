@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: sample-api-service
+  messages:
+    basename: classpath:messages/message
+    encoding: UTF-8
+server:
+  port: ${PORT:8080}
+
+mybatis:  
+  mapper-locations: classpath:mappers/**/*.xml
+
+cloud:
+  aws:
+    region:  
+      static: ap-northeast-2
+    stack:
+      auto:  false
