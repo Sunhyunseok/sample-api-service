@@ -51,7 +51,7 @@
  -->
     
 	<dependencies>
-	
+		
 		<dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
@@ -94,6 +94,7 @@
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
+		
 		<dependency>
 			<groupId>com.sk.jdp</groupId>
 			<artifactId>core-api-module</artifactId>
