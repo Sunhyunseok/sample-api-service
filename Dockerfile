@@ -1,4 +1,4 @@
-FROM openjdk:11-jdk
+FROM openjdk:11.0.8-jdk-slim
 VOLUME /tmp
 ADD target/sample-api-service-0.0.1-SNAPSHOT.jar app.jar
 ENV JAVA_OPTS=""
