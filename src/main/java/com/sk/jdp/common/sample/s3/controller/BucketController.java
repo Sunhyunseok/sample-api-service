@@ -35,12 +35,6 @@ public class BucketController {
 		return this.bucketService.createBucket(iamUserName.getIamUserName());
 	}
 	
-	//버킷 삭제
-	//@DeleteMapping("/bucket")
-	//public Bucket deleteBucket(@RequestBody BucketUser iamUserName) throws IOException {
-	//	return this.bucketService.deleteBucket(iamUserName.getIamUserName());
-	//}
-	
 	
 	@PostMapping("/bucket/file")
 	public String uploadFile(@RequestBody BucketUser iamUserName) throws IOException{

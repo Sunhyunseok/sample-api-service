@@ -1,12 +1,190 @@
-2020-10-29 16:38:15,297 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect start service : com.sk.jdp.common.sample.user.service.UserService / createUser()
-2020-10-29 16:38:15,308 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect finished service : com.sk.jdp.common.sample.user.service.UserService / createUser()
-2020-10-29 16:38:15,310 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect before service : com.sk.jdp.common.sample.user.service.UserService / createUser()
-2020-10-29 16:38:15,362 DEBUG c.s.j.c.s.u.d.UserMapper.createUser -  ==>  Preparing: INSERT INTO USER(NAME, EMAIL, AGE) VALUES(?, ?, ?)
-2020-10-29 16:38:15,389 DEBUG c.s.j.c.s.u.d.UserMapper.createUser -  ==> Parameters: user2(String), ss@ss(String), 20(Integer)
-2020-10-29 16:38:15,396 DEBUG c.s.j.c.s.u.d.UserMapper.createUser -  <==    Updates: 1
-2020-10-29 16:38:19,677 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect start service : com.sk.jdp.common.sample.user.service.UserService / getAllUser()
-2020-10-29 16:38:19,679 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect finished service : com.sk.jdp.common.sample.user.service.UserService / getAllUser()
-2020-10-29 16:38:19,679 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect before service : com.sk.jdp.common.sample.user.service.UserService / getAllUser()
-2020-10-29 16:38:19,685 DEBUG c.s.j.c.s.u.d.UserMapper.getAllUser -  ==>  Preparing: SELECT ID, NAME, EMAIL, AGE FROM USER
-2020-10-29 16:38:19,685 DEBUG c.s.j.c.s.u.d.UserMapper.getAllUser -  ==> Parameters: 
-2020-10-29 16:38:19,718 DEBUG c.s.j.c.s.u.d.UserMapper.getAllUser -  <==      Total: 3
+2020-11-27 10:05:50,330 ERROR c.s.j.c.c.h.HttpExceptionHandler -  Required int parameter 'fileId' is not present
+2020-11-27 10:06:26,686 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect start service : com.sk.jdp.common.sample.file.service.CommonFileService / getCommonFile()
+2020-11-27 10:06:26,688 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect finished service : com.sk.jdp.common.sample.file.service.CommonFileService / getCommonFile()
+2020-11-27 10:06:26,688 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect before service : com.sk.jdp.common.sample.file.service.CommonFileService / getCommonFile()
+2020-11-27 10:06:26,745 DEBUG c.s.j.c.s.f.m.C.getCommonFile -  ==>  Preparing: SELECT FILE_ID , FILE_NAME , FILE_PATH , FILE_SIZE_BYTE , FILE_EXTSN FROM UNTATFL WHERE FILE_ID = ?
+2020-11-27 10:06:26,783 DEBUG c.s.j.c.s.f.m.C.getCommonFile -  ==> Parameters: 1(Integer)
+2020-11-27 10:06:26,819 DEBUG c.s.j.c.s.f.m.C.getCommonFile -  <==      Total: 1
+2020-11-27 10:13:57,114 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect start service : com.sk.jdp.common.sample.file.service.CommonFileService / getCommonFile()
+2020-11-27 10:13:57,117 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect finished service : com.sk.jdp.common.sample.file.service.CommonFileService / getCommonFile()
+2020-11-27 10:13:57,118 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect before service : com.sk.jdp.common.sample.file.service.CommonFileService / getCommonFile()
+2020-11-27 10:14:30,829 DEBUG c.s.j.c.s.f.m.C.getCommonFile -  ==>  Preparing: SELECT FILE_ID , FILE_NAME , FILE_PATH , FILE_SIZE_BYTE , FILE_EXTSN FROM UNTATFL WHERE FILE_ID = ?
+2020-11-27 10:14:32,814 DEBUG c.s.j.c.s.f.m.C.getCommonFile -  ==> Parameters: 1(Integer)
+2020-11-27 10:14:33,288 DEBUG c.s.j.c.s.f.m.C.getCommonFile -  <==      Total: 1
+2020-11-27 10:17:01,046 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect start service : com.sk.jdp.common.sample.file.service.CommonFileService / getCommonFile()
+2020-11-27 10:17:01,047 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect finished service : com.sk.jdp.common.sample.file.service.CommonFileService / getCommonFile()
+2020-11-27 10:17:01,049 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect before service : com.sk.jdp.common.sample.file.service.CommonFileService / getCommonFile()
+2020-11-27 10:17:01,107 DEBUG c.s.j.c.s.f.m.C.getCommonFile -  ==>  Preparing: SELECT FILE_ID , FILE_NAME , FILE_PATH , FILE_SIZE_BYTE , FILE_EXTSN FROM UNTATFL WHERE FILE_ID = ?
+2020-11-27 10:17:01,140 DEBUG c.s.j.c.s.f.m.C.getCommonFile -  ==> Parameters: 1(Integer)
+2020-11-27 10:17:01,174 DEBUG c.s.j.c.s.f.m.C.getCommonFile -  <==      Total: 1
+2020-11-27 10:31:58,429 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect start service : com.sk.jdp.common.sample.file.service.CommonFileService / getCommonFile()
+2020-11-27 10:31:58,431 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect finished service : com.sk.jdp.common.sample.file.service.CommonFileService / getCommonFile()
+2020-11-27 10:31:58,433 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect before service : com.sk.jdp.common.sample.file.service.CommonFileService / getCommonFile()
+2020-11-27 10:31:58,495 DEBUG c.s.j.c.s.f.m.C.getCommonFile -  ==>  Preparing: SELECT FILE_ID , FILE_NAME , FILE_PATH , FILE_SIZE_BYTE , FILE_EXTSN FROM UNTATFL WHERE FILE_ID = ?
+2020-11-27 10:31:58,520 DEBUG c.s.j.c.s.f.m.C.getCommonFile -  ==> Parameters: 1(Integer)
+2020-11-27 10:31:58,544 DEBUG c.s.j.c.s.f.m.C.getCommonFile -  <==      Total: 1
+2020-11-27 10:32:05,732 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect start service : com.sk.jdp.common.sample.file.service.CommonFileService / getCommonFile()
+2020-11-27 10:32:05,735 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect finished service : com.sk.jdp.common.sample.file.service.CommonFileService / getCommonFile()
+2020-11-27 10:32:05,737 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect before service : com.sk.jdp.common.sample.file.service.CommonFileService / getCommonFile()
+2020-11-27 10:32:05,740 DEBUG c.s.j.c.s.f.m.C.getCommonFile -  ==>  Preparing: SELECT FILE_ID , FILE_NAME , FILE_PATH , FILE_SIZE_BYTE , FILE_EXTSN FROM UNTATFL WHERE FILE_ID = ?
+2020-11-27 10:32:05,742 DEBUG c.s.j.c.s.f.m.C.getCommonFile -  ==> Parameters: 1(Integer)
+2020-11-27 10:32:05,745 DEBUG c.s.j.c.s.f.m.C.getCommonFile -  <==      Total: 1
+2020-11-27 10:34:29,618 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect start service : com.sk.jdp.common.sample.file.service.CommonFileService / getCommonFile()
+2020-11-27 10:34:29,620 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect finished service : com.sk.jdp.common.sample.file.service.CommonFileService / getCommonFile()
+2020-11-27 10:34:29,621 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect before service : com.sk.jdp.common.sample.file.service.CommonFileService / getCommonFile()
+2020-11-27 10:34:29,672 DEBUG c.s.j.c.s.f.m.C.getCommonFile -  ==>  Preparing: SELECT FILE_ID , FILE_NAME , FILE_PATH , FILE_SIZE_BYTE , FILE_EXTSN FROM UNTATFL WHERE FILE_ID = ?
+2020-11-27 10:34:29,704 DEBUG c.s.j.c.s.f.m.C.getCommonFile -  ==> Parameters: 1(Integer)
+2020-11-27 10:34:29,731 DEBUG c.s.j.c.s.f.m.C.getCommonFile -  <==      Total: 1
+2020-11-27 13:09:26,262 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect start service : com.sk.jdp.common.sample.file.service.CommonFileService / getCommonFile()
+2020-11-27 13:09:26,264 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect finished service : com.sk.jdp.common.sample.file.service.CommonFileService / getCommonFile()
+2020-11-27 13:09:26,264 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect before service : com.sk.jdp.common.sample.file.service.CommonFileService / getCommonFile()
+2020-11-27 13:09:26,317 DEBUG c.s.j.c.s.f.m.C.getCommonFile -  ==>  Preparing: SELECT FILE_ID , FILE_NAME , FILE_PATH , FILE_SIZE_BYTE , FILE_EXTSN FROM UNTATFL WHERE FILE_ID = ?
+2020-11-27 13:09:26,351 DEBUG c.s.j.c.s.f.m.C.getCommonFile -  ==> Parameters: 1(Integer)
+2020-11-27 13:09:26,388 DEBUG c.s.j.c.s.f.m.C.getCommonFile -  <==      Total: 1
+2020-11-27 13:11:12,024 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect start service : com.sk.jdp.common.sample.file.service.CommonFileService / getCommonFile()
+2020-11-27 13:11:12,025 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect finished service : com.sk.jdp.common.sample.file.service.CommonFileService / getCommonFile()
+2020-11-27 13:11:12,026 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect before service : com.sk.jdp.common.sample.file.service.CommonFileService / getCommonFile()
+2020-11-27 13:11:12,062 DEBUG c.s.j.c.s.f.m.C.getCommonFile -  ==>  Preparing: SELECT FILE_ID , FILE_NAME , FILE_PATH , FILE_SIZE_BYTE , FILE_EXTSN FROM UNTATFL WHERE FILE_ID = ?
+2020-11-27 13:11:12,081 DEBUG c.s.j.c.s.f.m.C.getCommonFile -  ==> Parameters: 1(Integer)
+2020-11-27 13:11:12,100 DEBUG c.s.j.c.s.f.m.C.getCommonFile -  <==      Total: 1
+2020-11-27 13:13:05,823 ERROR c.s.j.c.c.h.HttpExceptionHandler -  Request method 'GET' not supported
+2020-11-27 13:13:10,469 DEBUG c.s.j.c.s.f.c.FileController -  java.io.tmpdir=C:\Users\dev\AppData\Local\Temp\
+2020-11-27 13:13:10,488 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect start service : com.sk.jdp.common.sample.file.service.FileService / fileUpload()
+2020-11-27 13:13:10,489 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect finished service : com.sk.jdp.common.sample.file.service.FileService / fileUpload()
+2020-11-27 13:13:10,489 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect before service : com.sk.jdp.common.sample.file.service.FileService / fileUpload()
+2020-11-27 13:13:10,499 DEBUG c.s.j.c.s.file.service.FileService -  getAbsolutePath=C:\Users\dev\sts-4.6.2.RELEASE\workspace\sample-api-service\uploads\dog6.jpg
+2020-11-27 13:13:10,500 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect start service : com.sk.jdp.common.sample.file.service.CommonFileService / createCommonFile()
+2020-11-27 13:13:10,500 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect finished service : com.sk.jdp.common.sample.file.service.CommonFileService / createCommonFile()
+2020-11-27 13:13:10,501 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect before service : com.sk.jdp.common.sample.file.service.CommonFileService / createCommonFile()
+2020-11-27 13:13:10,543 DEBUG c.s.j.c.s.f.m.C.insertCommonFile -  ==>  Preparing: INSERT INTO UNTATFL ( FILE_NAME , FILE_PATH , FILE_SIZE_BYTE , FILE_EXTSN) VALUES ( ? , ? , ? , ? )
+2020-11-27 13:13:10,565 DEBUG c.s.j.c.s.f.m.C.insertCommonFile -  ==> Parameters: dog6.jpg(String), C:\Users\dev\sts-4.6.2.RELEASE\workspace\sample-api-service\uploads\dog6.jpg(String), 5085(Long), jpg(String)
+2020-11-27 13:13:10,568 DEBUG c.s.j.c.s.f.m.C.insertCommonFile -  <==    Updates: 1
+2020-11-27 13:13:28,108 DEBUG c.s.j.c.s.f.c.FileController -  java.io.tmpdir=C:\Users\dev\AppData\Local\Temp\
+2020-11-27 13:13:28,110 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect start service : com.sk.jdp.common.sample.file.service.FileService / fileUpload()
+2020-11-27 13:13:28,111 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect finished service : com.sk.jdp.common.sample.file.service.FileService / fileUpload()
+2020-11-27 13:13:28,111 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect before service : com.sk.jdp.common.sample.file.service.FileService / fileUpload()
+2020-11-27 13:13:28,113 DEBUG c.s.j.c.s.file.service.FileService -  getAbsolutePath=C:\Users\dev\sts-4.6.2.RELEASE\workspace\sample-api-service\uploads\dog.jpg
+2020-11-27 13:13:28,113 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect start service : com.sk.jdp.common.sample.file.service.CommonFileService / createCommonFile()
+2020-11-27 13:13:28,114 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect finished service : com.sk.jdp.common.sample.file.service.CommonFileService / createCommonFile()
+2020-11-27 13:13:28,114 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect before service : com.sk.jdp.common.sample.file.service.CommonFileService / createCommonFile()
+2020-11-27 13:13:28,114 DEBUG c.s.j.c.s.f.m.C.insertCommonFile -  ==>  Preparing: INSERT INTO UNTATFL ( FILE_NAME , FILE_PATH , FILE_SIZE_BYTE , FILE_EXTSN) VALUES ( ? , ? , ? , ? )
+2020-11-27 13:13:28,115 DEBUG c.s.j.c.s.f.m.C.insertCommonFile -  ==> Parameters: dog.jpg(String), C:\Users\dev\sts-4.6.2.RELEASE\workspace\sample-api-service\uploads\dog.jpg(String), 5085(Long), jpg(String)
+2020-11-27 13:13:28,116 DEBUG c.s.j.c.s.f.m.C.insertCommonFile -  <==    Updates: 1
+2020-11-27 13:13:37,929 ERROR c.s.j.c.c.h.HttpExceptionHandler -  Request method 'POST' not supported
+2020-11-27 13:13:40,737 ERROR c.s.j.c.c.h.HttpExceptionHandler -  Required int parameter 'fileId' is not present
+2020-11-27 13:13:56,006 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect start service : com.sk.jdp.common.sample.file.service.CommonFileService / getCommonFile()
+2020-11-27 13:13:56,006 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect finished service : com.sk.jdp.common.sample.file.service.CommonFileService / getCommonFile()
+2020-11-27 13:13:56,007 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect before service : com.sk.jdp.common.sample.file.service.CommonFileService / getCommonFile()
+2020-11-27 13:13:56,013 DEBUG c.s.j.c.s.f.m.C.getCommonFile -  ==>  Preparing: SELECT FILE_ID , FILE_NAME , FILE_PATH , FILE_SIZE_BYTE , FILE_EXTSN FROM UNTATFL WHERE FILE_ID = ?
+2020-11-27 13:13:56,013 DEBUG c.s.j.c.s.f.m.C.getCommonFile -  ==> Parameters: 2(Integer)
+2020-11-27 13:13:56,033 DEBUG c.s.j.c.s.f.m.C.getCommonFile -  <==      Total: 1
+2020-11-27 15:05:59,694 DEBUG c.s.j.c.s.u.c.UserController -  search obj = UserSearch(searchText=null, rows=0, page=0, sidx=null, sord=null)
+2020-11-27 15:05:59,714 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect start service : com.sk.jdp.common.sample.user.service.UserService / getUserList()
+2020-11-27 15:05:59,714 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect finished service : com.sk.jdp.common.sample.user.service.UserService / getUserList()
+2020-11-27 15:05:59,715 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect before service : com.sk.jdp.common.sample.user.service.UserService / getUserList()
+2020-11-27 15:05:59,871 DEBUG c.s.j.c.s.u.m.U.getUserList_COUNT -  ==>  Preparing: SELECT count(0) FROM USER
+2020-11-27 15:05:59,875 DEBUG c.s.j.c.s.u.m.U.getUserList_COUNT -  ==> Parameters: 
+2020-11-27 15:05:59,901 DEBUG c.s.j.c.s.u.m.U.getUserList_COUNT -  <==      Total: 1
+2020-11-27 15:05:59,905 DEBUG c.s.j.c.s.u.m.UserMapper.getUserList -  ==>  Preparing: SELECT ID, NAME, EMAIL, AGE FROM USER
+2020-11-27 15:05:59,905 DEBUG c.s.j.c.s.u.m.UserMapper.getUserList -  ==> Parameters: 
+2020-11-27 15:05:59,911 DEBUG c.s.j.c.s.u.m.UserMapper.getUserList -  <==      Total: 13
+2020-11-27 15:05:59,912 DEBUG c.s.j.c.s.user.service.UserService -  listsize:13
+2020-11-27 15:06:12,265 DEBUG c.s.j.c.s.u.c.UserController -  search obj = UserSearch(searchText=null, rows=0, page=0, sidx=null, sord=null)
+2020-11-27 15:06:12,267 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect start service : com.sk.jdp.common.sample.user.service.UserService / getUserList()
+2020-11-27 15:06:12,267 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect finished service : com.sk.jdp.common.sample.user.service.UserService / getUserList()
+2020-11-27 15:06:12,268 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect before service : com.sk.jdp.common.sample.user.service.UserService / getUserList()
+2020-11-27 15:06:12,269 DEBUG c.s.j.c.s.u.m.U.getUserList_COUNT -  ==>  Preparing: SELECT count(0) FROM USER
+2020-11-27 15:06:12,270 DEBUG c.s.j.c.s.u.m.U.getUserList_COUNT -  ==> Parameters: 
+2020-11-27 15:06:12,271 DEBUG c.s.j.c.s.u.m.U.getUserList_COUNT -  <==      Total: 1
+2020-11-27 15:06:12,272 DEBUG c.s.j.c.s.u.m.UserMapper.getUserList -  ==>  Preparing: SELECT ID, NAME, EMAIL, AGE FROM USER
+2020-11-27 15:06:12,272 DEBUG c.s.j.c.s.u.m.UserMapper.getUserList -  ==> Parameters: 
+2020-11-27 15:06:12,277 DEBUG c.s.j.c.s.u.m.UserMapper.getUserList -  <==      Total: 13
+2020-11-27 15:06:12,277 DEBUG c.s.j.c.s.user.service.UserService -  listsize:13
+2020-11-27 15:07:13,367 DEBUG c.s.j.c.s.u.c.UserController -  search obj = UserSearch(searchText=null, rows=0, page=1, sidx=null, sord=null)
+2020-11-27 15:07:13,368 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect start service : com.sk.jdp.common.sample.user.service.UserService / getUserList()
+2020-11-27 15:07:13,368 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect finished service : com.sk.jdp.common.sample.user.service.UserService / getUserList()
+2020-11-27 15:07:13,369 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect before service : com.sk.jdp.common.sample.user.service.UserService / getUserList()
+2020-11-27 15:07:13,369 DEBUG c.s.j.c.s.u.m.U.getUserList_COUNT -  ==>  Preparing: SELECT count(0) FROM USER
+2020-11-27 15:07:13,370 DEBUG c.s.j.c.s.u.m.U.getUserList_COUNT -  ==> Parameters: 
+2020-11-27 15:07:13,371 DEBUG c.s.j.c.s.u.m.U.getUserList_COUNT -  <==      Total: 1
+2020-11-27 15:07:13,372 DEBUG c.s.j.c.s.u.m.UserMapper.getUserList -  ==>  Preparing: SELECT ID, NAME, EMAIL, AGE FROM USER
+2020-11-27 15:07:13,372 DEBUG c.s.j.c.s.u.m.UserMapper.getUserList -  ==> Parameters: 
+2020-11-27 15:07:13,373 DEBUG c.s.j.c.s.u.m.UserMapper.getUserList -  <==      Total: 13
+2020-11-27 15:07:13,374 DEBUG c.s.j.c.s.user.service.UserService -  listsize:13
+2020-11-27 15:07:53,019 DEBUG c.s.j.c.s.u.c.UserController -  search obj = UserSearch(searchText=null, rows=0, page=1, sidx=null, sord=null)
+2020-11-27 15:07:53,020 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect start service : com.sk.jdp.common.sample.user.service.UserService / getUserList()
+2020-11-27 15:07:53,020 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect finished service : com.sk.jdp.common.sample.user.service.UserService / getUserList()
+2020-11-27 15:07:53,020 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect before service : com.sk.jdp.common.sample.user.service.UserService / getUserList()
+2020-11-27 15:07:53,022 DEBUG c.s.j.c.s.u.m.U.getUserList_COUNT -  ==>  Preparing: SELECT count(0) FROM USER
+2020-11-27 15:07:53,022 DEBUG c.s.j.c.s.u.m.U.getUserList_COUNT -  ==> Parameters: 
+2020-11-27 15:07:53,023 DEBUG c.s.j.c.s.u.m.U.getUserList_COUNT -  <==      Total: 1
+2020-11-27 15:07:53,024 DEBUG c.s.j.c.s.u.m.UserMapper.getUserList -  ==>  Preparing: SELECT ID, NAME, EMAIL, AGE FROM USER
+2020-11-27 15:07:53,024 DEBUG c.s.j.c.s.u.m.UserMapper.getUserList -  ==> Parameters: 
+2020-11-27 15:07:53,026 DEBUG c.s.j.c.s.u.m.UserMapper.getUserList -  <==      Total: 13
+2020-11-27 15:07:53,026 DEBUG c.s.j.c.s.user.service.UserService -  listsize:13
+2020-11-27 15:08:44,620 DEBUG c.s.j.c.s.u.c.UserController -  search obj = UserSearch(searchText=null, rows=0, page=2, sidx=null, sord=null)
+2020-11-27 15:08:44,621 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect start service : com.sk.jdp.common.sample.user.service.UserService / getUserList()
+2020-11-27 15:08:44,621 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect finished service : com.sk.jdp.common.sample.user.service.UserService / getUserList()
+2020-11-27 15:08:44,621 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect before service : com.sk.jdp.common.sample.user.service.UserService / getUserList()
+2020-11-27 15:08:44,623 DEBUG c.s.j.c.s.u.m.U.getUserList_COUNT -  ==>  Preparing: SELECT count(0) FROM USER
+2020-11-27 15:08:44,623 DEBUG c.s.j.c.s.u.m.U.getUserList_COUNT -  ==> Parameters: 
+2020-11-27 15:08:44,624 DEBUG c.s.j.c.s.u.m.U.getUserList_COUNT -  <==      Total: 1
+2020-11-27 15:08:44,625 DEBUG c.s.j.c.s.u.m.UserMapper.getUserList -  ==>  Preparing: SELECT ID, NAME, EMAIL, AGE FROM USER
+2020-11-27 15:08:44,625 DEBUG c.s.j.c.s.u.m.UserMapper.getUserList -  ==> Parameters: 
+2020-11-27 15:08:44,627 DEBUG c.s.j.c.s.u.m.UserMapper.getUserList -  <==      Total: 13
+2020-11-27 15:08:44,627 DEBUG c.s.j.c.s.user.service.UserService -  listsize:13
+2020-11-27 15:15:06,623 DEBUG c.s.j.c.s.u.c.UserController -  search obj = UserSearch(searchText=null, rows=5, page=2, sidx=null, sord=null)
+2020-11-27 15:15:06,638 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect start service : com.sk.jdp.common.sample.user.service.UserService / getUserList()
+2020-11-27 15:15:06,638 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect finished service : com.sk.jdp.common.sample.user.service.UserService / getUserList()
+2020-11-27 15:15:06,639 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect before service : com.sk.jdp.common.sample.user.service.UserService / getUserList()
+2020-11-27 15:15:12,077 DEBUG c.s.j.c.s.u.m.U.getUserList_COUNT -  ==>  Preparing: SELECT count(0) FROM USER
+2020-11-27 15:15:12,091 DEBUG c.s.j.c.s.u.m.U.getUserList_COUNT -  ==> Parameters: 
+2020-11-27 15:15:12,106 DEBUG c.s.j.c.s.u.m.U.getUserList_COUNT -  <==      Total: 1
+2020-11-27 15:15:12,116 DEBUG c.s.j.c.s.u.m.UserMapper.getUserList -  ==>  Preparing: SELECT ID, NAME, EMAIL, AGE FROM USER LIMIT ?, ?
+2020-11-27 15:15:12,117 DEBUG c.s.j.c.s.u.m.UserMapper.getUserList -  ==> Parameters: 5(Integer), 5(Integer)
+2020-11-27 15:15:12,119 DEBUG c.s.j.c.s.u.m.UserMapper.getUserList -  <==      Total: 5
+2020-11-27 15:15:29,926 DEBUG c.s.j.c.s.user.service.UserService -  listsize:5
+2020-11-27 15:26:27,989 DEBUG c.s.j.c.s.u.c.UserController -  search obj = UserSearch(searchText=null, pageSize=10, pageNum=1)
+2020-11-27 15:26:28,005 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect start service : com.sk.jdp.common.sample.user.service.UserService / getUserList()
+2020-11-27 15:26:28,005 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect finished service : com.sk.jdp.common.sample.user.service.UserService / getUserList()
+2020-11-27 15:26:28,006 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect before service : com.sk.jdp.common.sample.user.service.UserService / getUserList()
+2020-11-27 15:26:28,093 DEBUG c.s.j.c.s.u.m.U.getUserList_COUNT -  ==>  Preparing: SELECT count(0) FROM USER
+2020-11-27 15:26:28,104 DEBUG c.s.j.c.s.u.m.U.getUserList_COUNT -  ==> Parameters: 
+2020-11-27 15:26:28,115 DEBUG c.s.j.c.s.u.m.U.getUserList_COUNT -  <==      Total: 1
+2020-11-27 15:26:28,121 DEBUG c.s.j.c.s.u.m.UserMapper.getUserList -  ==>  Preparing: SELECT ID, NAME, EMAIL, AGE FROM USER LIMIT ?
+2020-11-27 15:26:28,122 DEBUG c.s.j.c.s.u.m.UserMapper.getUserList -  ==> Parameters: 10(Integer)
+2020-11-27 15:26:28,124 DEBUG c.s.j.c.s.u.m.UserMapper.getUserList -  <==      Total: 10
+2020-11-27 15:26:28,124 DEBUG c.s.j.c.s.user.service.UserService -  listsize:10
+2020-11-27 15:26:33,008 DEBUG c.s.j.c.s.u.c.UserController -  search obj = UserSearch(searchText=null, pageSize=10, pageNum=2)
+2020-11-27 15:26:33,010 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect start service : com.sk.jdp.common.sample.user.service.UserService / getUserList()
+2020-11-27 15:26:33,010 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect finished service : com.sk.jdp.common.sample.user.service.UserService / getUserList()
+2020-11-27 15:26:33,010 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect before service : com.sk.jdp.common.sample.user.service.UserService / getUserList()
+2020-11-27 15:26:33,011 DEBUG c.s.j.c.s.u.m.U.getUserList_COUNT -  ==>  Preparing: SELECT count(0) FROM USER
+2020-11-27 15:26:33,012 DEBUG c.s.j.c.s.u.m.U.getUserList_COUNT -  ==> Parameters: 
+2020-11-27 15:26:33,013 DEBUG c.s.j.c.s.u.m.U.getUserList_COUNT -  <==      Total: 1
+2020-11-27 15:26:33,013 DEBUG c.s.j.c.s.u.m.UserMapper.getUserList -  ==>  Preparing: SELECT ID, NAME, EMAIL, AGE FROM USER LIMIT ?, ?
+2020-11-27 15:26:33,014 DEBUG c.s.j.c.s.u.m.UserMapper.getUserList -  ==> Parameters: 10(Integer), 10(Integer)
+2020-11-27 15:26:33,015 DEBUG c.s.j.c.s.u.m.UserMapper.getUserList -  <==      Total: 3
+2020-11-27 15:26:33,016 DEBUG c.s.j.c.s.user.service.UserService -  listsize:3
+2020-11-27 15:26:49,517 DEBUG c.s.j.c.s.u.c.UserController -  search obj = UserSearch(searchText=ji, pageSize=10, pageNum=2)
+2020-11-27 15:26:49,518 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect start service : com.sk.jdp.common.sample.user.service.UserService / getUserList()
+2020-11-27 15:26:49,518 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect finished service : com.sk.jdp.common.sample.user.service.UserService / getUserList()
+2020-11-27 15:26:49,518 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect before service : com.sk.jdp.common.sample.user.service.UserService / getUserList()
+2020-11-27 15:26:49,534 DEBUG c.s.j.c.s.u.m.U.getUserList_COUNT -  ==>  Preparing: SELECT count(0) FROM USER WHERE NAME LIKE CONCAT('%', ?, '%')
+2020-11-27 15:26:49,535 DEBUG c.s.j.c.s.u.m.U.getUserList_COUNT -  ==> Parameters: ji(String)
+2020-11-27 15:26:49,538 DEBUG c.s.j.c.s.u.m.U.getUserList_COUNT -  <==      Total: 1
+2020-11-27 15:26:49,539 DEBUG c.s.j.c.s.u.m.UserMapper.getUserList -  ==>  Preparing: SELECT ID, NAME, EMAIL, AGE FROM USER WHERE NAME LIKE CONCAT('%',?,'%') LIMIT ?
+2020-11-27 15:26:49,539 DEBUG c.s.j.c.s.u.m.UserMapper.getUserList -  ==> Parameters: ji(String), 10(Integer)
+2020-11-27 15:26:49,539 DEBUG c.s.j.c.s.u.m.UserMapper.getUserList -  <==      Total: 1
+2020-11-27 15:26:49,540 DEBUG c.s.j.c.s.user.service.UserService -  listsize:1
+2020-11-27 15:26:56,079 DEBUG c.s.j.c.s.u.c.UserController -  search obj = UserSearch(searchText=ji, pageSize=10, pageNum=1)
+2020-11-27 15:26:56,081 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect start service : com.sk.jdp.common.sample.user.service.UserService / getUserList()
+2020-11-27 15:26:56,081 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect finished service : com.sk.jdp.common.sample.user.service.UserService / getUserList()
+2020-11-27 15:26:56,081 INFO  c.s.j.c.core.aop.CommonLoggingAop -  Aspect before service : com.sk.jdp.common.sample.user.service.UserService / getUserList()
+2020-11-27 15:26:56,082 DEBUG c.s.j.c.s.u.m.U.getUserList_COUNT -  ==>  Preparing: SELECT count(0) FROM USER WHERE NAME LIKE CONCAT('%', ?, '%')
+2020-11-27 15:26:56,083 DEBUG c.s.j.c.s.u.m.U.getUserList_COUNT -  ==> Parameters: ji(String)
+2020-11-27 15:26:56,083 DEBUG c.s.j.c.s.u.m.U.getUserList_COUNT -  <==      Total: 1
+2020-11-27 15:26:56,085 DEBUG c.s.j.c.s.u.m.UserMapper.getUserList -  ==>  Preparing: SELECT ID, NAME, EMAIL, AGE FROM USER WHERE NAME LIKE CONCAT('%',?,'%') LIMIT ?
+2020-11-27 15:26:56,085 DEBUG c.s.j.c.s.u.m.UserMapper.getUserList -  ==> Parameters: ji(String), 10(Integer)
+2020-11-27 15:26:56,086 DEBUG c.s.j.c.s.u.m.UserMapper.getUserList -  <==      Total: 1
+2020-11-27 15:26:56,086 DEBUG c.s.j.c.s.user.service.UserService -  listsize:1

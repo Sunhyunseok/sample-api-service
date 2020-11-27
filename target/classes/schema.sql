@@ -4,5 +4,20 @@ CREATE TABLE USER (
   NAME varchar(255) NOT NULL ,
   EMAIL varchar(255)NOT NULL ,
   AGE int NOT NULL
-)
-;
+);
+
+DROP TABLE IF EXISTS TEST;
+create table test (
+  col1 varchar(100),
+  col2 varchar(100),
+  col3 varchar(100)
+);
+
+DROP TABLE IF EXISTS Untatfl;
+CREATE TABLE untatfl (
+  FILE_ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  FILE_NAME varchar(255) NOT NULL,
+  FILE_PATH varchar(255),
+  FILE_SIZE_BYTE INT,
+  FILE_EXTSN varchar(255)
+);

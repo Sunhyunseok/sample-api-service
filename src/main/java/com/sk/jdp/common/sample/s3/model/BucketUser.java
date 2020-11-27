@@ -9,7 +9,9 @@ import lombok.Setter;
 @Getter @Setter
 public class BucketUser {
 
+	//bucket에 매핑될 iam 계정명
 	private String iamUserName;
+	//파일 
 	private File file;
 	
 

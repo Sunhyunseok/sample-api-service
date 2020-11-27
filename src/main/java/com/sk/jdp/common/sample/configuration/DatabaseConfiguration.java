@@ -1,5 +1,7 @@
 package com.sk.jdp.common.sample.configuration;
 
+import javax.sql.DataSource;
+
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
@@ -11,15 +13,20 @@ import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import javax.sql.DataSource;
 
+
+/**
+ * @ClassName DatabaseConfiguration.java
+ * @Description MariaDB 설정
+ */
 @Configuration
-@MapperScan(basePackages = "com.sk.jdp.common.sample.**.dao", sqlSessionFactoryRef = "sqlSessionFactory")
+@MapperScan(basePackages = "com.sk.jdp.common.sample.**.mapper", sqlSessionFactoryRef = "sqlSessionFactory")
 @EnableTransactionManagement
 public class DatabaseConfiguration {
 
@@ -42,6 +49,10 @@ public class DatabaseConfiguration {
         final SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
         sessionFactory.setDataSource(dataSource);
         sessionFactory.setMapperLocations(applicationContext.getResources(resourcePath));
+        Resource mybatisConfig = new PathMatchingResourcePatternResolver().getResource("classpath:mybatis-config.xml");
+        sessionFactory.setConfigLocation(mybatisConfig);
+        
+        
         return sessionFactory.getObject();
     }
 

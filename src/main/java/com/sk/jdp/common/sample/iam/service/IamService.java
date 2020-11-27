@@ -26,6 +26,10 @@ import com.sk.jdp.common.sample.iam.model.IamUser;
 import software.amazon.awssdk.services.iam.model.IamException;
 
 
+/**
+ * @ClassName IamService.java
+ * @Description Iam 리소스에 접근하여 계정 조회, 생성 및 생성된 정책 매핑
+ */
 @Service
 public class IamService {
 	
@@ -100,6 +104,7 @@ public class IamService {
         }
 	 	return "";
     }
+	
 	//User IAM AccessKey create
 	public String createIamAccessKey(String iamUserName) {
 		  

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.sk.jdp.common.sample.file.mapper.CommonFileMapper">
+
+	<!-- 통합첨부파일 상세 조회 -->
+	<select id="getCommonFile" resultType="com.sk.jdp.common.sample.file.model.CommonFile">
+		SELECT 
+		       FILE_ID
+		     , FILE_NAME
+		     , FILE_PATH
+		     , FILE_SIZE_BYTE
+		     , FILE_EXTSN
+		  FROM UNTATFL
+		 WHERE FILE_ID = #{fileId}
+	</select>
+	
+	<!-- 통합첨부파일 등록 -->
+	<insert id="insertCommonFile" parameterType="com.sk.jdp.common.sample.file.model.CommonFile">
+		INSERT INTO UNTATFL (
+		       FILE_NAME
+		     , FILE_PATH
+		     , FILE_SIZE_BYTE
+		     , FILE_EXTSN)
+		VALUES (
+		       #{fileName}
+		     , #{filePath}
+		     , #{fileSizeByte}
+		     , #{fileExtsn}
+		)
+	</insert>
+
+</mapper>

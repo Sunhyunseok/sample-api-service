@@ -8,11 +8,7 @@ spring:
       username: root
       password: skcc
     initialization-mode: always
-  servlet: 
-    multipart:
-      enabled: TRUE
-      max-file-size: 50MB
-      max-request-size: 50MB
+
       
 
 logging: 
@@ -21,6 +17,7 @@ logging:
     max-history: 7
     name: logs/${spring.application.name}.log
    
+
     
 
   

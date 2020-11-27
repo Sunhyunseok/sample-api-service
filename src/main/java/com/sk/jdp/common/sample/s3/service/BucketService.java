@@ -18,17 +18,11 @@ import com.amazonaws.services.s3.model.PutObjectRequest;
 @Service
 public class BucketService {
 
-//	@Value("${cloud.aws.credentials.accessKey}")
-//    private String accessKey;
-//	
-//    @Value("${cloud.aws.credentials.secretKey}")
-//    private String secretKey;
 
     
     public AmazonS3 buildS3Client() {
-//    	AWSCredentials credentials = new ProfileCredentialsProvider();
+    	
         AmazonS3 s3 = AmazonS3ClientBuilder.standard()
-//        		.withCredentials(new AWSStaticCredentialsProvider(credentials))
         		.withRegion(Regions.AP_NORTHEAST_2)
         		.withCredentials(new ProfileCredentialsProvider("jdpprofile"))
         		.build();
@@ -79,10 +73,6 @@ public class BucketService {
 
     public String uploadFile(String iamUserName, File file) {
     	
-    	//AWSCredentials credentials = new BasicAWSCredentials(this.accessKey, this.secretKey);
-        //AmazonS3 s3 = AmazonS3ClientBuilder.standard()
-        //		.withCredentials(new AWSStaticCredentialsProvider(credentials))
-        //		.withRegion(Regions.AP_NORTHEAST_2).build();
     	AmazonS3 s3 = buildS3Client();
         
     	String bucketName = "jdpbucket"+iamUserName;

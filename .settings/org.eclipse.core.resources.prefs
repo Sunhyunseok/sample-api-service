@@ -2,5 +2,7 @@ eclipse.preferences.version=1
 encoding//src/main/java=UTF-8
 encoding//src/main/java/com/sk/jdp/common/sample/user/controller/UserController.java=UTF-8
 encoding//src/main/resources=UTF-8
+encoding//src/main/resources/messages/error.properties=UTF-8
+encoding//src/main/resources/messages/valid.properties=UTF-8
 encoding//src/test/java=UTF-8
 encoding/<project>=UTF-8

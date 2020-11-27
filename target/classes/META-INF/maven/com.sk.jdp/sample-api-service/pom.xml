@@ -21,11 +21,11 @@
 	</properties>
 	
 
-    <!-- <repositories>
+    <repositories>
         <repository>
             <id>maven-public</id>
             <name>jdp maven repository for public dependency</name>
-            <url>http://3.34.143.195:8081/repository/maven-public/</url>
+            <url>http://13.125.9.25:8081/repository/maven-public/</url>
             <snapshots>
                 <enabled>true</enabled>
             </snapshots>
@@ -39,7 +39,7 @@
         <pluginRepository>
             <id>maven-public</id>
             <name>jdp maven repository for public plugin</name>
-            <url>http://3.34.143.195:8081/repository/maven-public/</url>
+            <url>http://13.125.9.25:8081/repository/maven-public/</url>
             <snapshots>
                 <enabled>true</enabled>
             </snapshots>
@@ -48,7 +48,7 @@
             </releases>
         </pluginRepository>
     </pluginRepositories>
- -->
+ 
     
 	<dependencies>
 		
@@ -60,6 +60,13 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter</artifactId>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-validator -->
+		<dependency>
+		    <groupId>org.hibernate</groupId>
+		    <artifactId>hibernate-validator</artifactId>
+		    <version>6.1.6.Final</version>
+		</dependency>
+		
 		<dependency>
 		    <groupId>org.mariadb.jdbc</groupId>
 		    <artifactId>mariadb-java-client</artifactId>
@@ -100,6 +107,18 @@
 			<artifactId>core-api-module</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>4.1.2</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.github.pagehelper/pagehelper-spring-boot-starter -->
+		<dependency>
+		    <groupId>com.github.pagehelper</groupId>
+		    <artifactId>pagehelper-spring-boot-starter</artifactId>
+		    <version>1.2.5</version>
+		</dependency>
+		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>

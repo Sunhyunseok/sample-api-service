@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.sk.jdp.SampleApiServiceApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 16.547 s - in com.sk.jdp.SampleApiServiceApplicationTests

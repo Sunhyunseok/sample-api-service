@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.sk.jdp.common.sample.user.dao.UserMapper">
+<mapper namespace="com.sk.jdp.common.sample.user.mapper.UserMapper">
  
     <select id="getUserById" resultType="com.sk.jdp.common.sample.user.model.User">
         SELECT ID, NAME, EMAIL, AGE
@@ -30,5 +30,15 @@
             FROM USER
             WHERE ID = #{id}
     </delete>
+    
+    <select id="getUserList" resultType="com.sk.jdp.common.sample.user.model.User">
+    	SELECT ID, NAME, EMAIL, AGE
+    		FROM USER
+   		<where>
+   			<if test="searchText != null and !searchText.equals('')"> 
+   				AND NAME LIKE CONCAT('%',#{searchText},'%')
+ 			</if>
+   		</where>
+    </select>
 
 </mapper>

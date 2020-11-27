@@ -25,13 +25,14 @@ public class IamController {
 		this.iamService= iamService;
 	}
 	
+	//iam user 리스트 조회
 	@GetMapping("/iam/users")
 	public List<IamUser> getIamUser() throws IOException {
 		return this.iamService.getIamUserList();
 	}
 	
 
-	//user 생성
+	//iam user 생성
 	@PostMapping("/iam/user")
 	public String createIamUser(@RequestBody IamUser iamUserName) throws IOException {
 		return this.iamService.createIamUser(iamUserName.getIamUserName());

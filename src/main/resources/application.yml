@@ -2,8 +2,15 @@ spring:
   application:
     name: sample-api-service
   messages:
-    basename: classpath:messages/message
+    basename: classpath:messages/valid, classpath:messages/error
     encoding: UTF-8
+  servlet:
+    multipart:
+      enabled: true 
+      file-size-threshold: 0B 
+      max-file-size: 300MB 
+      max-request-size: 1GB 
+
 server:
   port: ${PORT:8080}
 
@@ -22,3 +29,11 @@ cloud:
       static: ap-northeast-2
     stack:
       auto:  false
+      
+fileupload:
+  path: C:\Users\dev\sts-4.6.2.RELEASE\workspace\sample-api-service\uploads
+  
+pagehelper: 
+  helper-dialect: mariadb
+  #범위를 넘어가는 pageNum이 들어올 경우 가능한 값으로 변경
+  reasonable: true    #false

@@ -6,8 +6,10 @@ import java.util.List;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -15,10 +17,16 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sk.jdp.common.core.controller.BaseController;
+import com.sk.jdp.common.core.model.response.PaginatedResponse;
 import com.sk.jdp.common.sample.user.model.User;
+import com.sk.jdp.common.sample.user.model.UserSearch;
 import com.sk.jdp.common.sample.user.service.UserService;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @RestController
+@Validated
 public class UserController extends BaseController {
 
     private final UserService userService;
@@ -27,20 +35,20 @@ public class UserController extends BaseController {
         this.userService = userService;
     }
 
-//    @ApiOperation(value = "sample project - 유저 조회", notes = "sample project - 유저 조회 endpoint 입니다.")
+
     @GetMapping("/user/{id}")
     public User getUserById(@PathVariable @NotNull int id) {
-//        throw new ApiErrorException("1234", "api 처리 중 오류 발생");
+
         return userService.getUserById(id);
     }
 
-    @GetMapping("/user")
+    @GetMapping("/users")
     public List<User> getAllUser() {
         return userService.getAllUser();
     }
 
     @PostMapping("/user")
-    public int createUser(@RequestBody User user) {
+    public int createUser(@RequestBody @Valid User user) {
         return userService.createUser(user);
     }
 
@@ -57,6 +65,12 @@ public class UserController extends BaseController {
     @GetMapping("/remote/user")
     public List<User> getRemoteUser() {
         return userService.getRemoteUser();
+    }
+
+    @GetMapping("/user")
+    public PaginatedResponse<User> getUserList(@ModelAttribute UserSearch search){
+    	log.debug("search obj = {}", search);
+    	return userService.getUserList(search);
     }
 
 }
